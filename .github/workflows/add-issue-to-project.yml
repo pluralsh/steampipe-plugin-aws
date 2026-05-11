@@ -9,8 +9,7 @@ permissions:
 
 jobs:
   add-to-project:
-    uses: turbot/steampipe-workflows/.github/workflows/assign-issue-to-project.yml@main
+    uses: turbot/steampipe-workflows/.github/workflows/assign-issue-to-project.yml@d43b861891f5d98605bf0ae543cc75430e7c4854
     with:
       issue_number: ${{ github.event.issue.number }}
       repository: ${{ github.repository }}
-    secrets: inherit

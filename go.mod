@@ -1,8 +1,6 @@
 module github.com/turbot/steampipe-plugin-aws
 
-go 1.24
-
-toolchain go1.24.1
+go 1.26
 
 require (
 	github.com/aws/aws-sdk-go-v2 v1.41.1

@@ -16,5 +16,4 @@ permissions:
 
 jobs:
   anywhere_publish_workflow:
-    uses: turbot/steampipe-workflows/.github/workflows/steampipe-anywhere-aws.yml@main
-    secrets: inherit
+    uses: turbot/steampipe-workflows/.github/workflows/steampipe-anywhere-aws.yml@d43b861891f5d98605bf0ae543cc75430e7c4854

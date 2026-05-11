@@ -17,6 +17,6 @@ permissions:
 
 jobs:
   stale_workflow:
-    uses: turbot/steampipe-workflows/.github/workflows/stale.yml@main
+    uses: turbot/steampipe-workflows/.github/workflows/stale.yml@d43b861891f5d98605bf0ae543cc75430e7c4854
     with:
       dryRun: ${{ github.event.inputs.dryRun }}
