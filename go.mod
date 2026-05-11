@@ -1,4 +1,4 @@
-module github.com/turbot/steampipe-plugin-aws
+module github.com/pluralsh/steampipe-plugin-aws
 
 go 1.26
 
