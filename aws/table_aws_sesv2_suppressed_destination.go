@@ -30,13 +30,13 @@ func tableAwsSesV2SuppressedDestination(_ context.Context) *plugin.Table {
 					Require: plugin.Optional,
 				},
 				{
-					Name:    "start_date",
-					Require: plugin.Optional,
+					Name:      "start_date",
+					Require:   plugin.Optional,
 					Operators: []string{"="},
 				},
 				{
-					Name:    "end_date",
-					Require: plugin.Optional,
+					Name:      "end_date",
+					Require:   plugin.Optional,
 					Operators: []string{"="},
 				},
 			},
@@ -110,7 +110,7 @@ func tableAwsSesV2SuppressedDestination(_ context.Context) *plugin.Table {
 	}
 }
 
-//// LIST FUNCTION
+// // LIST FUNCTION
 func listSesSuppressedDestinations(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	svc, err := SESV2Client(ctx, d)
 	if err != nil {
@@ -184,7 +184,7 @@ func listSesSuppressedDestinations(ctx context.Context, d *plugin.QueryData, _ *
 	return nil, nil
 }
 
-//// HYDRATE FUNCTION
+// // HYDRATE FUNCTION
 func getSuppressedDestination(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
 	svc, err := SESV2Client(ctx, d)
 	if err != nil {

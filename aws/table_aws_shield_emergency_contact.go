@@ -16,11 +16,11 @@ func tableAwsShieldEmergencyContact(_ context.Context) *plugin.Table {
 		Name:        "aws_shield_emergency_contact",
 		Description: "AWS Shield Emergency Contact",
 		List: &plugin.ListConfig{
-			Hydrate:      listAwsShieldEmergencyContact,
+			Hydrate: listAwsShieldEmergencyContact,
 			IgnoreConfig: &plugin.IgnoreConfig{
 				ShouldIgnoreErrorFunc: shouldIgnoreErrors([]string{"ResourceNotFoundException"}),
 			},
-			Tags:         map[string]string{"service": "shield", "action": "DescribeEmergencyContactSettings"},
+			Tags: map[string]string{"service": "shield", "action": "DescribeEmergencyContactSettings"},
 		},
 		Columns: awsGlobalRegionColumns([]*plugin.Column{
 			{
@@ -71,10 +71,10 @@ func listAwsShieldEmergencyContact(ctx context.Context, d *plugin.QueryData, _ *
 
 	for i, contact := range data.EmergencyContactList {
 		d.StreamListItem(ctx, &emergencyContact{
-			Priority:		i,
-			EmailAddress:	contact.EmailAddress,
-			PhoneNumber:	contact.PhoneNumber,
-			ContactNotes:	contact.ContactNotes,
+			Priority:     i,
+			EmailAddress: contact.EmailAddress,
+			PhoneNumber:  contact.PhoneNumber,
+			ContactNotes: contact.ContactNotes,
 		})
 
 		// Context can be cancelled due to manual cancellation or the limit has been hit
@@ -89,8 +89,8 @@ func listAwsShieldEmergencyContact(ctx context.Context, d *plugin.QueryData, _ *
 // HELPER FUNCTIONS
 
 type emergencyContact struct {
-	Priority int
+	Priority     int
 	EmailAddress *string
-	PhoneNumber *string
+	PhoneNumber  *string
 	ContactNotes *string
 }

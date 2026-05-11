@@ -22,10 +22,10 @@ func tableAwsQuickSightGroup(_ context.Context) *plugin.Table {
 		Description: "AWS QuickSight Group",
 		Get: &plugin.GetConfig{
 			KeyColumns: []*plugin.KeyColumn{
-				{Name:    "group_name", Require: plugin.Required},
-				{Name:    "region", Require: plugin.Required},
-				{Name:    "namespace", Require: plugin.Required},
-				{Name:    "quicksight_account_id", Require: plugin.Optional},
+				{Name: "group_name", Require: plugin.Required},
+				{Name: "region", Require: plugin.Required},
+				{Name: "namespace", Require: plugin.Required},
+				{Name: "quicksight_account_id", Require: plugin.Optional},
 			},
 			Hydrate: getAwsQuickSightGroup,
 			Tags:    map[string]string{"service": "quicksight", "action": "DescribeGroup"},

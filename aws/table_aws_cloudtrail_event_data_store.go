@@ -25,14 +25,14 @@ func tableAwsCloudtrailEventDataStore(_ context.Context) *plugin.Table {
 			IgnoreConfig: &plugin.IgnoreConfig{
 				ShouldIgnoreErrorFunc: shouldIgnoreErrors([]string{"UnsupportedOperationException"}),
 			},
-			Tags:       map[string]string{"service": "cloudtrail", "action": "GetEventDataStore"},
+			Tags: map[string]string{"service": "cloudtrail", "action": "GetEventDataStore"},
 		},
 		List: &plugin.ListConfig{
 			Hydrate: listCloudTrailEventDataStores,
 			IgnoreConfig: &plugin.IgnoreConfig{
 				ShouldIgnoreErrorFunc: shouldIgnoreErrors([]string{"UnsupportedOperationException"}),
 			},
-			Tags:    map[string]string{"service": "cloudtrail", "action": "ListEventDataStores"},
+			Tags: map[string]string{"service": "cloudtrail", "action": "ListEventDataStores"},
 		},
 		HydrateConfig: []plugin.HydrateConfig{
 			{

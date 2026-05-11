@@ -269,7 +269,7 @@ func getAwsCloudWatchEventRule(ctx context.Context, d *plugin.QueryData, h *plug
 
 func getAwsCloudWatchEventTargetsByRule(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
 	rule := h.Item.(*eventbridge.DescribeRuleOutput)
-	
+
 	name := rule.Name
 	var eventBusName *string
 

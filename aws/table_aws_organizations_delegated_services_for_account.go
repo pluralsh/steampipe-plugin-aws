@@ -58,7 +58,6 @@ type delegatedServiceInfo struct {
 	DelegatedAccountId string
 }
 
-
 func listDelegatedServices(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
 	delegatedAccount := h.Item.(types.DelegatedAdministrator) // Get delegated administrator details
 

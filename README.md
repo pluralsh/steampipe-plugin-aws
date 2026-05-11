@@ -7,7 +7,7 @@ Use SQL to query infrastructure including servers, networks, identity and more f
 - **[Get started →](https://hub.steampipe.io/plugins/turbot/aws)**
 - Documentation: [Table definitions & examples](https://hub.steampipe.io/plugins/turbot/aws/tables)
 - Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
-- Get involved: [Issues](https://github.com/turbot/steampipe-plugin-aws/issues)
+- Get involved: [Issues](https://github.com/pluralsh/steampipe-plugin-aws/issues)
 
 ## Quick start
 
@@ -54,7 +54,7 @@ Prerequisites:
 Clone:
 
 ```sh
-git clone https://github.com/turbot/steampipe-plugin-aws.git
+git clone https://github.com/pluralsh/steampipe-plugin-aws.git
 cd steampipe-plugin-aws
 ```
 
@@ -96,4 +96,4 @@ This repository is published under the [Apache 2.0](https://www.apache.org/licen
 Want to help but don't know where to start? Pick up one of the `help wanted` issues:
 
 - [Steampipe](https://github.com/turbot/steampipe/labels/help%20wanted)
-- [AWS Plugin](https://github.com/turbot/steampipe-plugin-aws/labels/help%20wanted)
+- [AWS Plugin](https://github.com/pluralsh/steampipe-plugin-aws/labels/help%20wanted)

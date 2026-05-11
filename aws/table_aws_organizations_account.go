@@ -25,7 +25,7 @@ import (
 
 // Reason for this table design:
 // 1. To address the issue described here:
-//    https://github.com/turbot/steampipe-plugin-aws/issues/2235
+//    https://github.com/pluralsh/steampipe-plugin-aws/issues/2235
 // 2. As per the query plan for the query:
 //    select id, parent_id, title from aws_organizations_account WHERE parent_id IN (select id from aws_organizations_organizational_unit WHERE parent_id='ou-wxnb-wofu2g1q') limit 2
 //    Postgres does not provide the `parent_id` value with our previous design where the `parent_id` column value was populated from the query parameter.

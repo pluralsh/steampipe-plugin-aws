@@ -201,7 +201,7 @@ func listWellArchitectedLensReviews(ctx context.Context, d *plugin.QueryData, h 
 
 		for _, item := range output.LensReviewSummaries {
 			reviewSummary := LensReviewInfo{
-				WorkloadId:      workloadId,
+				WorkloadId: workloadId,
 				LensReview: &types.LensReview{
 					LensAlias:   item.LensAlias,
 					LensArn:     item.LensArn,
@@ -272,8 +272,8 @@ func getWellArchitectedLensReview(ctx context.Context, d *plugin.QueryData, h *p
 	}
 
 	review := LensReviewInfo{
-		WorkloadId:      &workloadId,
-		LensReview:      op.LensReview,
+		WorkloadId: &workloadId,
+		LensReview: op.LensReview,
 	}
 	if op.MilestoneNumber != nil {
 		review.MilestoneNumber = *op.MilestoneNumber

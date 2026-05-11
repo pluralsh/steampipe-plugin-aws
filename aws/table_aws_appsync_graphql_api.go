@@ -299,7 +299,7 @@ func getAppsyncGraphQLApiCache(ctx context.Context, d *plugin.QueryData, h *plug
 		case *types.GraphqlApi:
 			apiId = *api.ApiId
 		}
-		
+
 	} else {
 		// If this is a get call, use the key column
 		apiId = d.EqualsQualString("api_id")
@@ -322,7 +322,7 @@ func getAppsyncGraphQLApiCache(ctx context.Context, d *plugin.QueryData, h *plug
 
 	// Using the actual GetApiCache API
 	input := appsync.GetApiCacheInput{
-		ApiId:      aws.String(apiId),
+		ApiId: aws.String(apiId),
 	}
 
 	res, err := svc.GetApiCache(ctx, &input)

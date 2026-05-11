@@ -231,7 +231,7 @@ func getBedrockImportedModel(ctx context.Context, d *plugin.QueryData, h *plugin
 	if err != nil {
 		// Handle the unsupported region error since the resource is not available in all the regions
 		if strings.Contains(strings.ToLower(err.Error()), strings.ToLower("ValidationException")) ||
-		  strings.Contains(strings.ToLower(err.Error()), strings.ToLower("Your account is not authorized to invoke this API operation")) {
+			strings.Contains(strings.ToLower(err.Error()), strings.ToLower("Your account is not authorized to invoke this API operation")) {
 			return nil, nil
 		}
 

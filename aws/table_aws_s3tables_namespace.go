@@ -96,7 +96,6 @@ type NamespaceInfo struct {
 	TableBucketArn  string
 }
 
-
 //// LIST FUNCTION
 
 func listS3tablesNamespaces(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {

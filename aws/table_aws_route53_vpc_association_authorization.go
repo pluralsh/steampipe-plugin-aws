@@ -67,7 +67,7 @@ type VPCAssociationAuthorizationResult struct {
 	VPCRegion    *string
 }
 
-//// LIST FUNCTION
+// // LIST FUNCTION
 func listVPCAssociationAuthorization(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
 
 	// Create session

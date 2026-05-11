@@ -130,11 +130,11 @@ func getWellArchitectedLensReviewReports(ctx context.Context, d *plugin.QueryDat
 			return nil, err
 		}
 
-		report :=  ReviewReportInfo{
-			Base64String:    op.LensReviewReport.Base64String,
-			LensAlias:       op.LensReviewReport.LensAlias,
-			LensArn:         op.LensReviewReport.LensArn,
-			WorkloadId:      op.WorkloadId,
+		report := ReviewReportInfo{
+			Base64String: op.LensReviewReport.Base64String,
+			LensAlias:    op.LensReviewReport.LensAlias,
+			LensArn:      op.LensReviewReport.LensArn,
+			WorkloadId:   op.WorkloadId,
 		}
 		if op.MilestoneNumber != nil {
 			report.MilestoneNumber = *op.MilestoneNumber

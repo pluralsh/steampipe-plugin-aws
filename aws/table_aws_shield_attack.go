@@ -25,15 +25,15 @@ func tableAwsShieldAttack(_ context.Context) *plugin.Table {
 			Tags:       map[string]string{"service": "shield", "action": "DescribeAttack"},
 		},
 		List: &plugin.ListConfig{
-			Hydrate:    listAttacks,
+			Hydrate: listAttacks,
 			KeyColumns: []*plugin.KeyColumn{
 				{
-					Name:    "resource_arn",
-					Require: plugin.Optional,
+					Name:      "resource_arn",
+					Require:   plugin.Optional,
 					Operators: []string{"="},
 				},
 			},
-			Tags:       map[string]string{"service": "shield", "action": "ListAttacks"},
+			Tags: map[string]string{"service": "shield", "action": "ListAttacks"},
 		},
 		Columns: awsGlobalRegionColumns([]*plugin.Column{
 			{
@@ -193,15 +193,15 @@ func getAttack(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) 
 
 	if data.Attack != nil {
 		return &AttackExtended{
-			AttackVectors: getAttackVectors(*data),
-			AttackCounters: data.Attack.AttackCounters,
-			AttackId: data.Attack.AttackId,
+			AttackVectors:    getAttackVectors(*data),
+			AttackCounters:   data.Attack.AttackCounters,
+			AttackId:         data.Attack.AttackId,
 			AttackProperties: data.Attack.AttackProperties,
-			EndTime: data.Attack.EndTime,
-			Mitigations: data.Attack.Mitigations,
-			ResourceArn: data.Attack.ResourceArn,
-			StartTime: data.Attack.StartTime,
-			SubResources: data.Attack.SubResources,
+			EndTime:          data.Attack.EndTime,
+			Mitigations:      data.Attack.Mitigations,
+			ResourceArn:      data.Attack.ResourceArn,
+			StartTime:        data.Attack.StartTime,
+			SubResources:     data.Attack.SubResources,
 		}, nil
 	}
 
@@ -211,18 +211,18 @@ func getAttack(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) 
 //// HELPER FUNCTIONS
 
 type AttackExtended struct {
-	AttackVectors []types.AttackVectorDescription
-	AttackCounters []types.SummarizedCounter
-	AttackId *string
+	AttackVectors    []types.AttackVectorDescription
+	AttackCounters   []types.SummarizedCounter
+	AttackId         *string
 	AttackProperties []types.AttackProperty
-	EndTime *time.Time
-	Mitigations []types.Mitigation
-	ResourceArn *string
-	StartTime *time.Time
-	SubResources []types.SubResourceSummary
+	EndTime          *time.Time
+	Mitigations      []types.Mitigation
+	ResourceArn      *string
+	StartTime        *time.Time
+	SubResources     []types.SubResourceSummary
 }
 
-func getAttackVectors(attack shield.DescribeAttackOutput) ([]types.AttackVectorDescription) {
+func getAttackVectors(attack shield.DescribeAttackOutput) []types.AttackVectorDescription {
 	attackVectors := []types.AttackVectorDescription{}
 
 	if attack.Attack.SubResources == nil {

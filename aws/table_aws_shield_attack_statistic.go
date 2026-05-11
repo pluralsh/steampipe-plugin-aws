@@ -51,10 +51,10 @@ func tableAwsShieldAttackStatistic(_ context.Context) *plugin.Table {
 }
 
 type attackStatistic struct {
-	StartTime time.Time
-	EndTime time.Time
-	Unit string
-	Max float64
+	StartTime   time.Time
+	EndTime     time.Time
+	Unit        string
+	Max         float64
 	AttackCount int64
 }
 

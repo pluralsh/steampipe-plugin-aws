@@ -313,7 +313,7 @@ func listGlueMLTransforms(ctx context.Context, d *plugin.QueryData, h *plugin.Hy
 		}
 
 		for _, transformId := range output.TransformIds {
-			
+
 			transformOutput := &glue.GetMLTransformOutput{
 				TransformId: aws.String(transformId),
 			}
